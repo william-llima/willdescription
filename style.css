@@ -1,0 +1,296 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+:root{
+ --marromP:#735D61;
+ --cinzaP:#594F54;
+ --begeP:#F1D4B1;
+ --cinzaclaroP:#E4E9F2;
+}
+body{
+		width:100%;
+	
+}
+#body2{
+	width:100%;
+	max-width:1380px;
+}
+
+#box_nave{
+	width:100%;
+	max-width:1380px;
+	height:100px;
+	overflow:hidden;
+	display:flex;
+	background-color:var(--marromP);
+	align-items:center;
+	justify-content:space-between;
+}
+#logo{
+	width:100px;
+	height:80%;
+	margin-left:10px;
+}
+#logo img{
+		width:100%;
+		height:100%;
+	}
+
+#items_menu{
+	width:300px;
+	height:100%;
+	display: flex;
+	justify-content: 
+}
+#item1_menu{
+	width:45%;
+		display: flex;
+		justify-content:center;
+		align-items:center;
+
+}
+#item1_menu a,#item2_menu a{
+		color:var(--cinzaclaroP);
+		text-decoration:none;
+		font-family:'Roboto',sans-serif;
+}
+
+#item2_menu{
+		width:45%;
+		display:flex;
+		justify-content: center;
+		align-items:center;
+}
+#menu_amb{
+	display:none;
+}
+/*Init first section*/
+
+ #section_letreiro{
+	width:100%;
+	height:150px;
+	background-color:var(--begeP);
+
+
+}
+section #letreiro{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+section #letreiro h1{
+	text-align:center;
+	color:var(--marromP);
+	font-family: 'Courier Prime', monospace;
+	font-size:2.5rem;
+}
+h1::after{
+	content:"|";
+	margin-left:5px;
+	opacity:1;
+	color:var(--cinzaclaroP);
+	animation:typing_cursor .7s infinite;
+}
+
+@keyframes typing_cursor{
+	0%,100%{
+		opacity:1;
+	}
+	50%{
+		opacity:0;
+	}
+}
+
+
+
+@media(max-width:1014px){
+section #letreiro h1{
+		font-size:2rem;
+	}
+}
+@media(max-width:650px){
+section #letreiro h1{
+		font-size:1.7rem;
+	}
+}
+#box_languages{
+	width:100%;
+	display:flex;
+	background-color:var(--cinzaP);
+}
+#languages_left{
+	width:50%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+}
+#languages_right{
+	width:50%;
+	
+}
+#languages_right #orbit{
+	position:relative;
+	background-image:url("./img/php.svg");
+	z-index:100;
+}
+#languages_right #at1{
+	position:relative;
+	background-image:url("./img/mysql.svg");
+	transform:translate(100px,0px);
+	z-index: 10;
+	animation:orbit 7s normal infinite;
+}
+#languages_right #at2{
+	position:relative;
+	background-image:url("./img/linux.svg");
+	transform:translate(-100px,-200px);
+	animation:orbitm 7s normal infinite;
+}
+
+
+@keyframes orbit{
+	0%{
+		transform:translate(100px,0px);
+		z-index: 101;
+		
+	}
+	50%{
+		transform:translate(-100px,200px);
+		z-index: 101;
+		
+	}
+	51%{
+		z-index:10;
+	}
+	100%{
+		z-index:10;
+	}
+
+	
+}
+@keyframes orbitm{
+	0%{
+		transform:translate(-100px,-200px);
+		
+	}
+	50%{
+		
+		transform:translate(100px,0px);
+	}
+	100%{
+		z-index: 102;
+	}
+}
+
+#languages_right div img{
+	width:100%;
+	height:100%;
+}
+#languages_right div {
+	width:100px;
+	height:100px;
+}
+.boximgsvg{
+	width:200px;
+	height:200px;
+}
+
+@media(max-width:800px){
+	#box_languages{
+		flex-direction:column;
+	}
+	#languages_left,#languages_right{
+		width:100%;
+	}
+	
+}
+
+/*menu mobile first*/
+@media(max-width:480px){
+			#box_nave{
+				display: flex;
+				width:100%;
+				height:80px;
+				overflow:hidden;
+				
+				align-items:center;
+			}
+			#logo{
+				width:20%;
+				margin-left:10px;
+				height: 80%;
+			}
+			#items_menu{
+				display: none;
+
+			}
+			#menu_amb{
+				display:flex;
+				flex-direction:column;
+				
+				width:70px;
+				height:70%;
+				margin-right:10px;
+				align-items:center;
+				justify-content: space-around;
+				background-color:var(--cinzaP);
+			}
+			#menu_amb #barra1,#barra2,#barra3{
+				width:80%;
+				height:8px;
+				background-color:var(--cinzaclaroP);
+			}
+			
+			#item1_menu,#item2_menu{
+				display:none;
+			}
+			section #letreiro h1{
+				font-size:1.4rem;
+			}
+			.boximgsvg{
+			width:100px;
+			height:100px;
+		}
+		#languages_right{
+			overflow:hidden;
+			height:60vh;
+		}
+
+		#languages_left{
+		display:grid;
+		grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
+
+		}
+}
+
+footer #foter{
+	width:100%;
+	height:60px;
+	background-color:var(--cinzaclaroP);
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+footer #foter p {
+font-family: 'Courier Prime', monospace;
+color:var(--cinzaP);
+}
+
+#ambmenuselect{
+	display:none;
+	position:absolute;
+	width:100vw;
+	height:100vh;
+	top:80px;
+	left:0;
+	z-index:20000;
+	background-color:var(--cinzaP);
+	justify-content: center;
+	
+}
+#ambmenuselect img{
+	width:200px;
+	height:200px;
+}
